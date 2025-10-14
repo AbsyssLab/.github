@@ -1,4 +1,4 @@
-# 🚀 AbsyssLab
+# AbsyssLab
 
 [🇬🇧 English version](README.md)
 
@@ -64,10 +64,4 @@ Nous accueillons toutes les contributions ! Consultez notre [guide de contributi
 Tous nos projets sont sous licence **Apache License 2.0**. Voir le fichier [LICENSE](https://github.com/AbsyssLab/.github/blob/main/LICENSE) pour plus de détails.
 
 ---
-
-<div align="center">
-  <strong>Made with ❤️ by the Absyss Team</strong>
-  <br/>
-  <sub>Powering Visual TOM integrations worldwide</sub>
-</div>
 
