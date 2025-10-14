@@ -1,0 +1,186 @@
+name: 🔌 Connector Request | Demande de Connecteur
+description: Propose a new VTOM connector | Proposer un nouveau connecteur VTOM
+title: "[CONNECTOR] "
+labels: ["new-connector", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **English:** Thank you for proposing a new connector! We evaluate all requests and prioritize based on community interest.
+        
+        **Français :** Merci de proposer un nouveau connecteur ! Nous évaluons toutes les demandes et priorisons en fonction de l'intérêt de la communauté.
+        
+        ---
+        
+        **Note:** Feel free to write your issue in English or French.
+        **Remarque :** N'hésitez pas à rédiger votre issue en anglais ou en français.
+
+  - type: input
+    id: tool-name
+    attributes:
+      label: Tool/Platform Name | Nom de l'outil/plateforme
+      description: Which tool would you like to integrate with VTOM? | Quel outil souhaitez-vous intégrer avec VTOM ?
+      placeholder: e.g. Kubernetes, Terraform, AWS Lambda, Splunk...
+    validations:
+      required: true
+
+  - type: input
+    id: tool-url
+    attributes:
+      label: Tool Website | Site web de l'outil
+      description: Official tool URL | URL officielle de l'outil
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category | Catégorie
+      description: In which category does this tool fall? | Dans quelle catégorie se situe cet outil ?
+      options:
+        - Cloud (AWS, Azure, GCP, etc.)
+        - CI/CD (Jenkins, GitLab CI, etc.)
+        - Automation (Ansible, Terraform, etc.)
+        - Backup & Recovery
+        - Monitoring & Observability
+        - ITSM / Ticketing
+        - Data & Analytics
+        - Container & Orchestration
+        - AI & Machine Learning
+        - Other | Autre
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case | Cas d'usage
+      description: How would you use this connector with VTOM? | Comment utiliseriez-vous ce connecteur avec VTOM ?
+      placeholder: |
+        I would like to orchestrate from VTOM... | J'aimerais pouvoir orchestrer depuis VTOM...
+        Typical use cases: | Cas d'usage typiques :
+        - Deploy applications | Déployer des applications
+        - Launch pipelines | Lancer des pipelines
+        - Manage cloud resources | Gérer des ressources cloud
+        - etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: features
+    attributes:
+      label: Desired Features | Fonctionnalités souhaitées
+      description: What actions should this connector enable? | Quelles actions devrait permettre ce connecteur ?
+      placeholder: |
+        The connector should allow: | Le connecteur devrait permettre de :
+        - [ ] Trigger an action | Déclencher une action
+        - [ ] Retrieve task status | Récupérer le statut d'une tâche
+        - [ ] Get logs | Obtenir des logs
+        - [ ] etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: api-info
+    attributes:
+      label: Available API | API disponible
+      description: Does the tool have an API? Which one? | L'outil dispose-t-il d'une API ? Laquelle ?
+      placeholder: |
+        - REST API available: Yes/No | API REST disponible : Oui/Non
+        - API documentation: https://... | Documentation API : https://...
+        - Available SDK: Python, Go, Java, etc. | SDK disponible : Python, Go, Java, etc.
+        - CLI available: Yes/No | CLI disponible : Oui/Non
+
+  - type: textarea
+    id: authentication
+    attributes:
+      label: Authentication Method | Méthode d'authentification
+      description: How to authenticate with this tool? | Comment s'authentifier auprès de cet outil ?
+      placeholder: |
+        - API Key
+        - OAuth 2.0
+        - Bearer Token | Token Bearer
+        - Certificate | Certificat
+        - Other... | Autre...
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Target Environment | Environnement cible
+      description: On which environment would this connector run? | Sur quel type d'environnement s'exécuterait ce connecteur ?
+      multiple: true
+      options:
+        - Linux
+        - Windows
+        - Cloud (SaaS)
+        - Container
+        - Other | Autre
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Workflow Examples | Exemples de workflows
+      description: Describe a typical workflow using this connector | Décrivez un workflow type utilisant ce connecteur
+      placeholder: |
+        Example workflow: | Workflow exemple :
+        1. VTOM triggers the connector with parameters X, Y | VTOM déclenche le connecteur avec les paramètres X, Y
+        2. The connector calls the API to launch action Z | Le connecteur appelle l'API pour lancer l'action Z
+        3. The connector waits for execution to complete | Le connecteur attend la fin de l'exécution
+        4. The connector returns status to VTOM | Le connecteur retourne le statut à VTOM
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority for You | Priorité pour vous
+      description: How important is this connector for your usage? | Quelle est l'importance de ce connecteur pour votre usage ?
+      options:
+        - Nice to have
+        - Important (would improve our automation) | Important (améliorerait notre automatisation)
+        - Critical (immediate need) | Critique (besoin immédiat)
+    validations:
+      required: true
+
+  - type: textarea
+    id: community
+    attributes:
+      label: Community Interest | Intérêt communautaire
+      description: Do you know other organizations that could benefit from this connector? | Connaissez-vous d'autres organisations qui pourraient bénéficier de ce connecteur ?
+      placeholder: I've discussed with several teams who would be interested... | J'ai discuté avec plusieurs équipes qui seraient intéressées...
+
+  - type: input
+    id: existing-tools
+    attributes:
+      label: Existing Tools | Outils existants
+      description: Do similar integrations already exist elsewhere? | Existe-t-il déjà des intégrations similaires ailleurs ?
+      placeholder: Ex. Jenkins plugin for this tool, Community Python script, etc. | Ex. Plugin Jenkins pour cet outil, Script Python communautaire, etc.
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Would you be willing to contribute? | Seriez-vous prêt à contribuer ?
+      options:
+        - label: I would be willing to contribute to the development of this connector | Je serais prêt à contribuer au développement de ce connecteur
+          required: false
+        - label: I can provide a test environment | Je peux fournir un environnement de test
+          required: false
+        - label: I can help with documentation | Je peux aider à la documentation
+          required: false
+        - label: I can provide detailed feedback during testing | Je peux fournir des retours détaillés lors des tests
+          required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Verification | Vérifications
+      description: Before submitting | Avant de soumettre
+      options:
+        - label: I've verified that no similar connector already exists in AbsyssLab | J'ai vérifié qu'aucun connecteur similaire n'existe déjà dans AbsyssLab
+          required: true
+        - label: I've searched existing issues and found no similar request | J'ai cherché dans les issues existantes et n'ai pas trouvé de demande similaire
+          required: true

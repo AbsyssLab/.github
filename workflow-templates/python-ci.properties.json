@@ -1,0 +1,16 @@
+{
+  "name": "Python CI Workflow",
+  "description": "Continuous Integration workflow for Python projects with linting, testing, and security checks",
+  "iconName": "python",
+  "categories": [
+    "Python",
+    "CI",
+    "Testing"
+  ],
+  "filePatterns": [
+    "requirements.txt$",
+    "setup.py$",
+    ".*\\.py$"
+  ]
+}
+

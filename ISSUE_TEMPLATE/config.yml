@@ -1,0 +1,12 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/AbsyssLab/.github/blob/main/SUPPORT.md
+    about: Consultez notre guide de support et la documentation
+  - name: 💬 Discussions
+    url: https://github.com/orgs/AbsyssLab/discussions
+    about: Posez des questions et échangez avec la communauté
+  - name: 🔒 Security Issue
+    url: https://github.com/AbsyssLab/.github/blob/main/SECURITY.md
+    about: Signaler une vulnérabilité de sécurité (ne pas créer d'issue publique)
+

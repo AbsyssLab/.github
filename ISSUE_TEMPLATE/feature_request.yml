@@ -1,0 +1,144 @@
+name: ✨ Feature Request | Demande de Fonctionnalité
+description: Propose a new feature or enhancement | Proposer une nouvelle fonctionnalité ou amélioration
+title: "[FEATURE] "
+labels: ["enhancement", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **English:** Thank you for sharing your idea! Feature suggestions are always welcome.
+        
+        **Français :** Merci de partager votre idée ! Les suggestions d'amélioration sont toujours les bienvenues.
+        
+        ---
+        
+        **Note:** Feel free to write your issue in English or French.
+        **Remarque :** N'hésitez pas à rédiger votre issue en anglais ou en français.
+
+  - type: dropdown
+    id: connector
+    attributes:
+      label: Affected Connector | Connecteur concerné
+      description: For which VTOM connector do you propose this feature? | Pour quel connecteur VTOM proposez-vous cette fonctionnalité ?
+      options:
+        - vtom-azure-data-factory
+        - vtom-azure-logic-app
+        - vtom-azure-storage
+        - vtom-ansible
+        - vtom-jenkins
+        - vtom-veeam
+        - vtom-commvault
+        - vtom-hycu
+        - vtom-servicenow
+        - vtom-jira-service-management
+        - vtom-pager-duty
+        - vtom-grafana
+        - vtom-ai-jobs
+        - vtom-ai-log-analyzer
+        - vtom-git
+        - vtom-gitcommand
+        - vtom-jobascode
+        - vtom-remote-agent-unix
+        - All connectors | Tous les connecteurs
+        - Other | Autre
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Feature Type | Type de fonctionnalité
+      description: Which category best describes your request? | Quelle catégorie décrit le mieux votre demande ?
+      options:
+        - New feature | Nouvelle fonctionnalité
+        - Enhancement of existing feature | Amélioration d'une fonctionnalité existante
+        - Better error handling | Meilleure gestion des erreurs
+        - Performance improvement | Amélioration des performances
+        - Documentation
+        - Tests
+        - Other | Autre
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to Solve | Problème à résoudre
+      description: What problem would this feature solve? | Quel problème cette fonctionnalité résoudrait-elle ?
+      placeholder: Currently, it is not possible to... | Actuellement, il n'est pas possible de...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution | Solution proposée
+      description: How do you envision this feature? | Comment imaginez-vous cette fonctionnalité ?
+      placeholder: I propose adding a parameter that would allow... | Je propose d'ajouter un paramètre qui permettrait de...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered | Alternatives envisagées
+      description: Have you considered other approaches? | Avez-vous considéré d'autres approches ?
+      placeholder: I also thought about... but it has the disadvantage of... | J'ai aussi pensé à... mais cela présente l'inconvénient de...
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case | Cas d'usage
+      description: In what context would you use this feature? | Dans quel contexte utiliseriez-vous cette fonctionnalité ?
+      placeholder: |
+        In my environment, we need to... | Dans mon environnement, nous avons besoin de...
+        This feature would be used for... | Cette fonctionnalité serait utilisée pour...
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples | Exemples
+      description: Can you provide configuration or usage examples? | Pouvez-vous fournir des exemples de configuration ou d'utilisation ?
+      render: yaml
+      placeholder: |
+        # Desired configuration example | Exemple de configuration souhaitée
+        job:
+          name: my-job
+          new_parameter: value
+          ...
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority | Priorité
+      description: How important is this feature for you? | Quelle est l'importance de cette fonctionnalité pour vous ?
+      options:
+        - Nice to have (minor improvement) | Nice to have (amélioration mineure)
+        - Important (would significantly improve usage) | Important (améliorerait significativement l'usage)
+        - Critical (blocking for my use case) | Critique (bloquant pour mon cas d'usage)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Would you be willing to contribute? | Seriez-vous prêt à contribuer ?
+      options:
+        - label: I would be willing to submit a Pull Request to implement this feature | Je serais prêt à soumettre une Pull Request pour implémenter cette fonctionnalité
+          required: false
+        - label: I can help test this feature once implemented | Je peux aider à tester cette fonctionnalité une fois implémentée
+          required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Verification | Vérifications
+      description: Before submitting | Avant de soumettre
+      options:
+        - label: I've searched existing issues and found no similar request | J'ai cherché dans les issues existantes et n'ai pas trouvé de demande similaire
+          required: true
+        - label: I've verified this feature doesn't already exist in the latest version | J'ai vérifié que cette fonctionnalité n'existe pas déjà dans la dernière version
+          required: true

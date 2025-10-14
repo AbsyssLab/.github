@@ -1,0 +1,151 @@
+name: 🐛 Bug Report | Rapport de Bug
+description: Report a bug or unexpected behavior | Signaler un bug ou un comportement inattendu
+title: "[BUG] "
+labels: ["bug", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **English:** Thank you for taking the time to report this bug! The more detailed the information, the faster we can resolve the issue.
+        
+        **Français :** Merci de prendre le temps de signaler ce bug ! Plus les informations sont détaillées, plus vite nous pourrons résoudre le problème.
+        
+        ---
+        
+        **Note:** Feel free to write your issue in English or French.
+        **Remarque :** N'hésitez pas à rédiger votre issue en anglais ou en français.
+
+  - type: dropdown
+    id: connector
+    attributes:
+      label: Affected Connector | Connecteur concerné
+      description: Which VTOM connector is affected? | Quel connecteur VTOM est affecté ?
+      options:
+        - vtom-azure-data-factory
+        - vtom-azure-logic-app
+        - vtom-azure-storage
+        - vtom-ansible
+        - vtom-jenkins
+        - vtom-veeam
+        - vtom-commvault
+        - vtom-hycu
+        - vtom-servicenow
+        - vtom-jira-service-management
+        - vtom-pager-duty
+        - vtom-grafana
+        - vtom-ai-jobs
+        - vtom-ai-log-analyzer
+        - vtom-git
+        - vtom-gitcommand
+        - vtom-jobascode
+        - vtom-remote-agent-unix
+        - Other | Autre
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description | Description du bug
+      description: Clear and concise description of the problem | Description claire et concise du problème
+      placeholder: The job fails with the following error... | Le job échoue avec l'erreur suivante...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce | Étapes pour reproduire
+      description: How to reproduce the bug? | Comment reproduire le bug ?
+      placeholder: |
+        1. Configure job with... | Configurer le job avec...
+        2. Execute with parameters... | Exécuter avec les paramètres...
+        3. Error occurs... | L'erreur se produit...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior | Comportement attendu
+      description: What should happen normally? | Que devrait-il se passer normalement ?
+      placeholder: The job should complete successfully... | Le job devrait se terminer avec succès...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior | Comportement observé
+      description: What actually happens? | Que se passe-t-il réellement ?
+      placeholder: The job fails with return code 1... | Le job échoue avec le code retour 1...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and Error Messages | Logs et messages d'erreur
+      description: Copy relevant logs (stdout/stderr) | Copier les logs pertinents (stdout/stderr)
+      render: shell
+      placeholder: |
+        Error: Connection timeout
+        Traceback (most recent call last):
+        ...
+
+  - type: input
+    id: vtom-version
+    attributes:
+      label: Visual TOM Version
+      description: Which VTOM version are you using? | Quelle version de VTOM utilisez-vous ?
+      placeholder: e.g. 6.3.1, 6.4.0
+    validations:
+      required: true
+
+  - type: input
+    id: connector-version
+    attributes:
+      label: Connector Version | Version du connecteur
+      description: Which connector version are you using? | Quelle version du connecteur utilisez-vous ?
+      placeholder: e.g. 1.0.0, main branch
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System | Système d'exploitation
+      description: On which OS does the connector run? | Sur quel OS le connecteur s'exécute-t-il ?
+      options:
+        - Linux (RedHat/CentOS)
+        - Linux (Debian/Ubuntu)
+        - Linux (SUSE)
+        - Linux (Other | Autre)
+        - Windows Server
+        - Unix (AIX, HP-UX, Solaris)
+        - Other | Autre
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context | Contexte additionnel
+      description: Any other useful information | Toute autre information utile
+      placeholder: The job works in dev but not in prod... | Le job fonctionne en dev mais pas en prod...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Verification | Vérifications
+      description: Before submitting | Avant de soumettre
+      options:
+        - label: I've searched existing issues and found no duplicate | J'ai cherché dans les issues existantes et n'ai pas trouvé de doublon
+          required: true
+        - label: I've consulted the connector's documentation | J'ai consulté la documentation du connecteur
+          required: true
+        - label: I've removed all sensitive information from logs | J'ai masqué toute information sensible dans les logs
+          required: true
+

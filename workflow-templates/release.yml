@@ -1,0 +1,119 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: 📝 Generate changelog
+      id: changelog
+      run: |
+        # Get the previous tag
+        PREV_TAG=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1) 2>/dev/null || echo "")
+        
+        if [ -z "$PREV_TAG" ]; then
+          echo "First release"
+          CHANGELOG=$(git log --pretty=format:"- %s (%h)" --reverse)
+        else
+          echo "Changes since $PREV_TAG"
+          CHANGELOG=$(git log $PREV_TAG..HEAD --pretty=format:"- %s (%h)" --reverse)
+        fi
+        
+        # Save changelog to file
+        echo "$CHANGELOG" > CHANGELOG.txt
+        echo "changelog<<EOF" >> $GITHUB_OUTPUT
+        echo "$CHANGELOG" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+
+    - name: 📦 Create Release Archive
+      run: |
+        TAG_NAME=${GITHUB_REF#refs/tags/}
+        REPO_NAME=$(basename ${{ github.repository }})
+        
+        # Create archive excluding .git and other unnecessary files
+        mkdir -p release
+        git archive --format=zip --prefix=${REPO_NAME}-${TAG_NAME}/ HEAD -o release/${REPO_NAME}-${TAG_NAME}.zip
+        git archive --format=tar.gz --prefix=${REPO_NAME}-${TAG_NAME}/ HEAD -o release/${REPO_NAME}-${TAG_NAME}.tar.gz
+
+    - name: 🚀 Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        body: |
+          ## 🎉 Release ${{ github.ref_name }}
+          
+          ### 📋 Changes
+          ${{ steps.changelog.outputs.changelog }}
+          
+          ### 📦 Installation
+          
+          Download the archive and extract it:
+          ```bash
+          wget https://github.com/${{ github.repository }}/archive/${{ github.ref_name }}.tar.gz
+          tar -xzf ${{ github.ref_name }}.tar.gz
+          cd $(basename ${{ github.repository }})-${GITHUB_REF#refs/tags/v}
+          ```
+          
+          Or clone with the specific tag:
+          ```bash
+          git clone --branch ${{ github.ref_name }} https://github.com/${{ github.repository }}.git
+          ```
+          
+          ### 📖 Documentation
+          
+          See the [README](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/README.md) for usage instructions.
+          
+          ---
+          
+          **Full Changelog**: https://github.com/${{ github.repository }}/compare/${{ steps.changelog.outputs.prev_tag }}...${{ github.ref_name }}
+        files: |
+          release/*.zip
+          release/*.tar.gz
+        draft: false
+        prerelease: false
+        generate_release_notes: true
+
+  docker-release:
+    runs-on: ubuntu-latest
+    if: hashFiles('Dockerfile') != ''
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+
+    - name: 🔐 Log in to Docker Hub
+      if: github.event_name != 'pull_request'
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: 📝 Extract metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ secrets.DOCKER_USERNAME }}/$(basename ${{ github.repository }})
+        tags: |
+          type=semver,pattern={{version}}
+          type=semver,pattern={{major}}.{{minor}}
+          type=semver,pattern={{major}}
+          type=raw,value=latest
+
+    - name: 🏗️ Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+
