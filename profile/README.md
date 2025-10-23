@@ -23,6 +23,7 @@ Discover our complete collection of VTOM connectors:
 - **[vtom-veeam](https://github.com/AbsyssLab/vtom-veeam)** - Veeam backup orchestration
 - **[vtom-commvault](https://github.com/AbsyssLab/vtom-commvault)** - Commvault job management
 - **[vtom-hycu](https://github.com/AbsyssLab/vtom-hycu)** - Hycu integration
+- **[vtom-vmware](https://github.com/AbsyssLab/vtom-vmware)** - VMWare integration
 
 ### 📊 Monitoring & Alerting
 - **[vtom-servicenow](https://github.com/AbsyssLab/vtom-servicenow)** - ServiceNow ticket creation
