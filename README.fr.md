@@ -204,7 +204,7 @@ Ce dépôt et tous les fichiers par défaut sont sous licence [Apache License 2.
 ## 🌟 Impact
 
 Ce dépôt aide à maintenir la qualité et la cohérence sur :
-- **18+ connecteurs** pour Visual TOM
+- **19+ connecteurs** pour Visual TOM
 - **Plusieurs contributeurs** de diverses organisations
 - **Divers cas d'usage** en environnements de production
 

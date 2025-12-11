@@ -19,6 +19,9 @@ Discover our complete collection of VTOM connectors:
 - **[vtom-ansible](https://github.com/AbsyssLab/vtom-ansible)** - Ansible playbook execution
 - **[vtom-jenkins](https://github.com/AbsyssLab/vtom-jenkins)** - Jenkins CI/CD integration
 
+### 🖥️ Virtualization & Infrastructure
+- **[vtom-vmware](https://github.com/AbsyssLab/vtom-vmware)** - VMware vSphere VM management and orchestration
+
 ### 💾 Backup & Recovery
 - **[vtom-veeam](https://github.com/AbsyssLab/vtom-veeam)** - Veeam backup orchestration
 - **[vtom-commvault](https://github.com/AbsyssLab/vtom-commvault)** - Commvault job management

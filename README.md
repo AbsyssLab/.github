@@ -204,7 +204,7 @@ This repository and all default files are licensed under the [Apache License 2.0
 ## 🌟 Impact
 
 This repository helps maintain quality and consistency across:
-- **18+ connectors** for Visual TOM
+- **19+ connectors** for Visual TOM
 - **Multiple contributors** from various organizations
 - **Diverse use cases** in production environments
 

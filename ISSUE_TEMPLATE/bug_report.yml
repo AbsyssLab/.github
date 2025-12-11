@@ -28,6 +28,7 @@ body:
         - vtom-azure-storage
         - vtom-ansible
         - vtom-jenkins
+        - vtom-vmware
         - vtom-veeam
         - vtom-commvault
         - vtom-hycu
