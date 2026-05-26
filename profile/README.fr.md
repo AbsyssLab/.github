@@ -12,6 +12,9 @@ Nous développons des **connecteurs open source** pour **Visual TOM** (VTOM), un
 
 Découvrez notre collection complète de connecteurs VTOM :
 
+### ☸️ Kubernetes & Déploiement
+- **[vtom-helm](https://github.com/AbsyssLab/vtom-helm)** - Chart Helm pour déployer Visual TOM sur Kubernetes (AKS, GKE, EKS, on-premise)
+
 ### ☁️ Cloud & Automation
 - **[vtom-azure-data-factory](https://github.com/AbsyssLab/vtom-azure-data-factory)** - Orchestration des pipelines Azure Data Factory
 - **[vtom-azure-logic-app](https://github.com/AbsyssLab/vtom-azure-logic-app)** - Déclenchement de workflows Azure Logic Apps
