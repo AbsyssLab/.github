@@ -24,6 +24,8 @@ Discover our complete collection of VTOM connectors:
 
 ### 🖥️ Virtualization & Infrastructure
 - **[vtom-vmware](https://github.com/AbsyssLab/vtom-vmware)** - VMware vSphere VM management and orchestration
+- **[vtom-vmware](https://github.com/AbsyssLab/vtom-proxmox)** - Proxmox VM management and orchestration
+- **[vtom-vmware](https://github.com/AbsyssLab/vtom-vmware)** - Nutanix AHV VM management and orchestration
 
 ### 💾 Backup & Recovery
 - **[vtom-veeam](https://github.com/AbsyssLab/vtom-veeam)** - Veeam backup orchestration
