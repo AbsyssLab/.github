@@ -46,6 +46,10 @@ Découvrez notre collection complète de connecteurs VTOM :
 - **[vtom-jobascode](https://github.com/AbsyssLab/vtom-jobascode)** - Scheduling as Code
 - **[vtom-remote-agent-unix](https://github.com/AbsyssLab/vtom-remote-agent-unix)** - Configuration des agents distants Unix
 
+### 🧩ERP
+- **[vtom-git](https://github.com/AbsyssLab/vtom-cegid)** - Exécution de traitements Cegid
+- **[vtom-git](https://github.com/AbsyssLab/vtom-cegid-file-exchange)** - Echange de fichiers Cegid
+
 ## 🌟 Pourquoi nos connecteurs ?
 
 - ✅ **Open Source** - Apache License 2.0
