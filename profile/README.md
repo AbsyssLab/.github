@@ -48,6 +48,10 @@ Discover our complete collection of VTOM connectors:
 - **[vtom-jobascode](https://github.com/AbsyssLab/vtom-jobascode)** - Scheduling as Code
 - **[vtom-remote-agent-unix](https://github.com/AbsyssLab/vtom-remote-agent-unix)** - Unix remote agent configuration
 
+### 🧩ERP
+- **[vtom-git](https://github.com/AbsyssLab/vtom-cegid)** - Cegid job execution
+- **[vtom-git](https://github.com/AbsyssLab/vtom-cegid-file-exchange)** - Cegid file exchange
+
 ## 🌟 Why Our Connectors?
 
 - ✅ **Open Source** - Apache License 2.0
