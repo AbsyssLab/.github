@@ -52,6 +52,9 @@ Discover our complete collection of VTOM connectors:
 - **[vtom-cegid](https://github.com/AbsyssLab/vtom-cegid)** - Cegid job execution
 - **[vtom-cegid-file-exchange](https://github.com/AbsyssLab/vtom-cegid-file-exchange)** - Cegid file exchange
 
+### 🔄 Data integration
+- **[vtom-informatica-cloud](https://github.com/AbsyssLab/vtom-informatica-cloud)** - Informatica job execution
+
 ## 🌟 Why Our Connectors?
 
 - ✅ **Open Source** - Apache License 2.0
