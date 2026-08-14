@@ -47,8 +47,8 @@ Découvrez notre collection complète de connecteurs VTOM :
 - **[vtom-remote-agent-unix](https://github.com/AbsyssLab/vtom-remote-agent-unix)** - Configuration des agents distants Unix
 
 ### 🧩ERP
-- **[vtom-git](https://github.com/AbsyssLab/vtom-cegid)** - Exécution de traitements Cegid
-- **[vtom-git](https://github.com/AbsyssLab/vtom-cegid-file-exchange)** - Echange de fichiers Cegid
+- **[vtom-cegid](https://github.com/AbsyssLab/vtom-cegid)** - Exécution de traitements Cegid
+- **[vtom-cegid-file-exchange](https://github.com/AbsyssLab/vtom-cegid-file-exchange)** - Echange de fichiers Cegid
 
 ## 🌟 Pourquoi nos connecteurs ?
 
