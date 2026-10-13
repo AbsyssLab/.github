@@ -52,6 +52,10 @@ Découvrez notre collection complète de connecteurs VTOM :
 
 ### 🔄 Data integration
 - **[vtom-informatica-cloud](https://github.com/AbsyssLab/vtom-informatica-cloud)** - Exécution de traitements Informatica
+- **[vtom-kafka](https://github.com/AbsyssLab/vtom-kafka)** - Attente de message Kafka via Job
+- **[vtom-kafkaPost](https://github.com/AbsyssLab/vtom-kafkaPost)** - Postage de message Kafka via Job
+- **[vtom-kafkaGen](https://github.com/AbsyssLab/vtomkafkaGen)** - Attente de message Kafka via Ressource
+- **[vtom-kafkaGenPost](https://github.com/AbsyssLab/vtom-kafkaGenPost)** - Postage de message Kafka via Ressource
   
 ## 🌟 Pourquoi nos connecteurs ?
 
