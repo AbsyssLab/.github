@@ -54,6 +54,10 @@ Discover our complete collection of VTOM connectors:
 
 ### 🔄 Data integration
 - **[vtom-informatica-cloud](https://github.com/AbsyssLab/vtom-informatica-cloud)** - Informatica job execution
+- **[vtom-kafka](https://github.com/AbsyssLab/vtom-kafka)** - Waiting message from Kafka with Job
+- **[vtom-kafkaPost](https://github.com/AbsyssLab/vtom-kafkaPost)** - Posting Kafka message with Job
+- **[vtom-kafkaGen](https://github.com/AbsyssLab/vtom-kafkaGen)** - Waiting message from Kafka with Resource
+- **[vtom-kafkaGenPost](https://github.com/AbsyssLab/vtom-kafkaGenPost)** - Posting Kafka message with Resource
 
 ## 🌟 Why Our Connectors?
 
